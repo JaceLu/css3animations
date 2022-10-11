@@ -1,0 +1,28 @@
+/* ======================================皮肤样式 ======================================*/
+.theme1 {
+    /*边框颜色*/
+    --screen-border: rgba(43, 121, 255, .5);
+    --screen-color: #FFF;
+    --screen-light-color: #b9b8ce;
+    --screen-link-color: #0fe;
+    --screen-light-color-hover: #FFF;
+    --screen-disabled-color: rgb(185 184 206 / 60%);
+    --screen-background: #020011;
+    --screen-header-background: rgb(23 29 38);
+    --screen-box-background: rgb(23 29 38 / 30%);
+    --screen-color-primary: rgba(43, 121, 255, .3);
+    --screen-background-hover: #1c2632;
+    --screen-color-primary-hover: rgb(26 244 255 / 80%);
+    /*菜单皮肤*/
+    --menu-item-background-color: #3f70d9;
+    --menu-item-background-image: linear-gradient(to right, rgb(63 112 217 / 20%), #3f70d9, rgb(63 112 217 / 20%));
+    --menu-link-color: #00a6e0;
+    --menu-link-color-hover: #fff;
+    /*bootstrap皮肤适配*/
+    
+}
+
+
+/* 
+
+*/
