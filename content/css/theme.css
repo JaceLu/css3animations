@@ -2,26 +2,55 @@
 .theme1 {
     /*边框颜色*/
     --screen-border: rgba(43, 121, 255, .5);
-    --screen-color: #FFF;
-    --screen-light-color: #b9b8ce;
-    --screen-link-color: #0fe;
-    --screen-light-color-hover: #FFF;
-    --screen-disabled-color: rgb(185 184 206 / 60%);
-    --screen-background: #020011;
-    --screen-header-background: rgb(23 29 38);
-    --screen-box-background: rgb(23 29 38 / 30%);
-    --screen-color-primary: rgba(43, 121, 255, .3);
-    --screen-background-hover: #1c2632;
+    --screen-color: #fff;
+    --screen-color-primary: #0fe;
     --screen-color-primary-hover: rgb(26 244 255 / 80%);
-    /*菜单皮肤*/
-    --menu-item-background-color: #3f70d9;
-    --menu-item-background-image: linear-gradient(to right, rgb(63 112 217 / 20%), #3f70d9, rgb(63 112 217 / 20%));
-    --menu-link-color: #00a6e0;
-    --menu-link-color-hover: #fff;
+    --screen-color-light: #b9b8ce;
+    --screen-color-light-hover: #FFF;
+    --screen-color-link: #0fe;
+    --screen-color-link-hover: #0fe;
+    --screen-color-disabled: rgb(185 184 206 / 60%);
+    --screen-background: #101129;
+    --screen-background-hover: #1c2632;
+    --screen-header-background: rgb(23 29 38);
+    --screen-background-image: linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 0), linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 0);
+    --screen-background-size: 15px 15px, 15px 15px;
     /*bootstrap皮肤适配*/
-    
+    --bs-primary: #000;
+    --bs-success: #000;
+    --bs-info: #000;
+    --bs-warning: #000;
+    --bs-danger: #000;
 }
-
+.theme1 .table {
+    --bs-table-bg: transparent;
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: #fff;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #212529;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #fff;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    width: 100%;
+    margin-bottom: 0rem;
+    color: inherit;
+    vertical-align: top;
+    border-color: var(--screen-border);
+}
+/* ======================================容器边框样式 ======================================*/
+.border1 {
+    --box-border-width: 2px;
+    --box-border-style: solid;
+    --box-border-color: #086ac1;
+    --box-border-image: none;
+    --box-border-radius: 6px;
+    --box-background-color: rgb(0 36 139 / 20%);
+    --box-background: var(--box-background-color);
+    --box-inner-margin: -2px;
+    --box-inner-padding: 0px;
+    --box-head-padding: 5px 16px;
+    --box-body-padding: 0 5px 15px 5px;
+}
 
 /* 
 

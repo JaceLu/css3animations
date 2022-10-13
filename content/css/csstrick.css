@@ -1,0 +1,19 @@
+/* css规范 */
+.tps {
+    color: #fff;
+    border: 1px solid currentColor;
+}
+
+.tps::before {
+    border-left-color: inherit;
+}
+/* 简写 */
+div{
+    border-width: 2px;
+    border-left-width: 0;
+}
+/* 适当添加过渡效果
+将display:none和block普通显隐转换改为使用scale二维向量函数控制容器放大缩小
+配合使用过渡动画
+
+*/

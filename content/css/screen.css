@@ -45,18 +45,23 @@ a {
 .screen {
     min-width: 1900px;
     max-width: 1920px;
-    height: 1080px;
+    max-height: 1080px;
+    height: 100vh;
+    overflow: hidden;
     margin: 0 auto;
     background-repeat: no-repeat;
     background-position: 100%;
     background-size: contain;
+    color: var(--screen-color);
+    background: var(--screen-background);
+    background-image: var(--screen-background-image);
+    background-size: var(--screen-background-size);
 }
 
 .screen__head {
     position: relative;
     z-index: 1;
     display: flex;
-    font-size: 16px;
     height: 100px;
 }
 
@@ -68,33 +73,13 @@ a {
     text-align: left;
 }
 
-.screen-title {
-    position: relative;
-    display: inline-block;
-    padding: 20px 70px 5px 70px;
-    height: 80px;
-    letter-spacing: 4px;
-    text-align: center;
-}
-
-.screen-title h2 {
+.screen__head-box {
     margin: 0;
-    line-height: 1;
-    font-size: 32px;
-    font-weight: bold;
-    color: #fff;
-    z-index: 2;
-    position: inherit;
-}
-
-.screen-title p {
-    margin: 0;
-    line-height: 1;
-    font-size: 32px;
-    font-weight: bold;
-    color: #fff;
-    z-index: 2;
-    position: inherit;
+    padding: 0 16px;
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 .screen__head-right {
@@ -105,6 +90,10 @@ a {
     text-align: right;
 }
 
+.screen__head-right .screen__head-box {
+    justify-content: right;
+}
+
 .screen__head-center {
     position: relative;
     display: inline-block;
@@ -112,6 +101,114 @@ a {
     height: 80px;
     letter-spacing: 4px;
     text-align: center;
+}
+
+.screen-title {
+    margin: 0;
+    line-height: 1;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--screen-color);
+    background: linear-gradient(180deg, #fff, #9fc3ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.screen-subtitle {
+    margin: 0;
+    line-height: 1;
+    font-family: OPPOSans-M, OPPOSans;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: var(--screen-color-primary);
+}
+
+.screen__body {
+    display: flex;
+}
+
+.screen-content {
+    flex: 1;
+    padding: 0 16px;
+}
+
+/*添加顶部菜单栏*/
+.screen__head-menu {
+    margin: 9px 0 0 0;
+    padding: 0;
+    padding-left: 15px;
+    list-style: none;
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
+}
+
+.screen__head-left .screen__head-menu {
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+.screen__head-right .screen__head-menu {
+    padding-right: 15px;
+    padding-left: 10px;
+}
+
+.screen__head-menu__item {
+    position: relative;
+    min-width: 120px;
+    height: 100%;
+    padding: 0 15px;
+    font-size: 18px;
+    text-align: center;
+    color: #c2d7fa;
+    cursor: pointer;
+}
+
+.screen__head-menu__item-link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    text-align: center;
+    white-space: nowrap;
+    color: inherit;
+    background-color: transparent;
+    text-overflow: ellipsis;
+}
+
+.screen__head-menu__item:after {
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 120px;
+    height: 23px;
+    margin-left: -60px;
+    background-image: url(/images/screen/inside.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 0;
+    content: "";
+    background-size: 100% auto;
+    pointer-events: none;
+}
+
+.screen__head-menu__item:hover,
+.screen__head-menu__item.active {
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(180deg, rgba(43, 121, 255, 0) 5px, #2b79ff);
+}
+
+.screen__head-menu__item:hover:after,
+.screen__head-menu__item.active:after {
+    opacity: 1;
 }
 
 /* ======================================组件样式 ======================================*/
@@ -161,6 +258,7 @@ a {
     border-width: var(--box-border-width);
     border-style: var(--box-border-style);
     border-color: var(--box-border-color);
+    border-radius: var(--box-border-radius);
     border-image: var(--box-border-image);
     background-color: var(--box-background-color);
     background: var(--box-background);
@@ -172,20 +270,19 @@ a {
 }
 
 .box__head {
+    position: relative;
     display: flex;
     align-items: center;
-    position: relative;
+    justify-content: space-between;
     padding: var(--box-head-padding);
     z-index: 1;
-    text-align: center;
-    color: #fff;
-    height: 46px;
+    color: var(--screen-color);
 }
 
 .box__head b {
     display: inline-block;
-    margin: 0 10px;
-    letter-spacing: 2px;
+    font-size: large;
+    font-weight: normal;
 }
 
 .box__body {
@@ -194,16 +291,45 @@ a {
     padding: var(--box-body-padding);
 }
 
-/* ======================================容器边框样式 ======================================*/
-.border1 {
-    --box-border-width: 2px;
-    --box-border-style: solid;
-    --box-border-color: #086ac1;
-    --box-border-image: none;
-    --box-background-color: rgb(0 36 139 / 20%);
-    --box-background: var(--box-background-color);
-    --box-inner-margin: -2px;
-    --box-inner-padding: 10px;
-    --box-head-padding: 5px 16px;
-    --box-body-padding: 0 5px 15px 5px;
+/* bootstrap组件变量化设置 */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: currentColor;
 }
+
+.btn-success {
+    background-color: var(--bs-success);
+    border-color: currentColor;
+}
+
+.btn-info {
+    background-color: var(--bs-info);
+    border-color: currentColor;
+}
+
+.btn-warning {
+    background-color: var(--bs-warning);
+    border-color: currentColor;
+}
+
+.btn-danger {
+    background-color: var(--bs-danger);
+    border-color: currentColor;
+}
+
+.form-control,
+.form-select {
+    color: var(--screen-color);
+    background-color: var(--screen-background);
+    border: 1px solid var(--screen-border);
+}
+
+.form-control:focus {
+    color: var(--screen-color);
+    background-color: var(--screen-background);
+    border-color: var(--screen-border);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+
