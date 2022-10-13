@@ -1,0 +1,23 @@
+常用git指令
+
+git clone 链接地址  //克隆代码库
+
+git branch  //查看分支
+
+git checkout -b xx  //创建分支xx
+
+git push --set-upstream origin xx   //将本地创建分支XX推送到远端
+
+git pull    //拉取远端关联分支代码
+
+git pull origin XX //拉取远端指定分支XX代码
+
+git merge   //合并远端master父分支代码
+
+git merge origin/xx   //合并远端XX分支代码
+
+git commit //本地修改内容添加到暂存区，还未推送到远端
+
+git status      //查看修改文件
+
+
